@@ -7,7 +7,7 @@ form.addEventListener('submit' , (event) => {
     const location = search.value
     messageOne.textContent = "Loading ..."
     messageTwo.textContent = ""
-    fetch("http://localhost:3000/weather?search="+encodeURIComponent(location)).then((response) => {
+    fetch("/weather?search="+encodeURIComponent(location)).then((response) => {
     response.json().then((data)=>{
         if(data.error){
             messageOne.textContent = data.error

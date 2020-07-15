@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs =require('hbs')
 const app = express()
+const port = process.env.PORT || 3000
 const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 const publicPath = path.join(__dirname , "../public")
@@ -67,6 +68,6 @@ app.get('/help/*',(req , res) =>{
     })
 })
 
-app.listen(3000 , () =>{
-    console.log("Server port 3000")
+app.listen(port , () =>{
+    console.log("Server port " + port)
 })
